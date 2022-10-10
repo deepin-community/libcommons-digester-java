@@ -1,0 +1,12 @@
+#!/usr/bin/make -f
+
+export CLASSPATH=/usr/share/java/commons-beanutils.jar:/usr/share/java/commons-collections3.jar:/usr/share/java/commons-logging.jar
+
+%:
+	dh $@ --with maven-repo-helper
+
+override_dh_auto_build:
+	dh_auto_build -- dist
+
+get-orig-source:
+	-uscan --upstream-version 0 --rename

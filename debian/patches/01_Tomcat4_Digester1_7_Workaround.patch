@@ -1,0 +1,51 @@
+diff -Nur libcommons-digester-java-1.8/src/java/org/apache/commons/digester/Digester.java libcommons-digester-java-1.8.new/src/java/org/apache/commons/digester/Digester.java
+--- libcommons-digester-java-1.8/src/java/org/apache/commons/digester/Digester.java	2007-09-20 21:22:48.000000000 +0530
++++ libcommons-digester-java-1.8.new/src/java/org/apache/commons/digester/Digester.java	2007-09-20 21:28:43.000000000 +0530
+@@ -199,6 +199,12 @@
+     protected String JAXP_SCHEMA_LANGUAGE =
+         "http://java.sun.com/xml/jaxp/properties/schemaLanguage";
+     
++    /**
++     * The JAXP 1.2 property required to set up the schema location.
++     * Removed in digester 1.6 - introduced for tomcat4 backport
++     */
++    private static final String JAXP_SCHEMA_SOURCE =
++        "http://java.sun.com/xml/jaxp/properties/schemaSource";
+     
+     /**
+      * The Locator associated with our parser.
+@@ -714,8 +720,32 @@
+                 parser = getFactory().newSAXParser();
+             }
+         } catch (Exception e) {
+-            log.error("Digester.getParser: ", e);
+-            return (null);
++            // this apparently fails for tomcat4
++            // fallback to old digester 1.5 behaviour
++            // #### Begin tomcat4 workaround #####
++	        // Create a new parser
++        	try {
++           	 parser = getFactory().newSAXParser();         
++       		 } catch (Exception e1) {
++       		    log.error("Workarounderror Digester.getParser: ", e1);
++        	    return (null);
++       		 }
++
++     	 	 // Configure standard properties and return the new instance
++      		 try {
++       		    if (schemaLocation != null) {
++       		       setProperty(JAXP_SCHEMA_LANGUAGE, schemaLanguage);
++       		       setProperty(JAXP_SCHEMA_SOURCE, schemaLocation);
++        	    }
++      		  } catch (Exception e2) {
++      		      log.warn("Exception in workaround" + e2);
++     		  }
++       		 return (parser);              
++             // #### End tomcat4 workaround #####
++            
++           //  Disabled the normally thrown Exception
++           //  log.error("Digester.getParser: ", e);
++           // return (null);
+         }
+ 
+         return (parser);

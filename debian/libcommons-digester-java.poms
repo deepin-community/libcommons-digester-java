@@ -1,0 +1,1 @@
+pom.xml --no-parent --has-package-version --java-lib --artifact=dist/commons-digester.jar

@@ -1,0 +1,40 @@
+Source: libcommons-digester-java
+Section: java
+Priority: optional
+Maintainer: Debian Java Maintainers <pkg-java-maintainers@lists.alioth.debian.org>
+Uploaders:
+ Varun Hiremath <varun@debian.org>,
+ Emmanuel Bourg <ebourg@apache.org>
+Build-Depends:
+ ant,
+ ant-optional,
+ debhelper (>= 10),
+ default-jdk,
+ junit,
+ libcommons-beanutils-java,
+ libcommons-logging-java,
+ maven-repo-helper
+Standards-Version: 4.1.3
+Vcs-Git: https://anonscm.debian.org/git/pkg-java/libcommons-digester-java.git
+Vcs-Browser: https://anonscm.debian.org/cgit/pkg-java/libcommons-digester-java.git
+Homepage: http://commons.apache.org/digester/
+
+Package: libcommons-digester-java
+Architecture: all
+Depends: libcommons-beanutils-java (>= 1.7-1), libcommons-logging-java, ${misc:Depends}
+Suggests: libcommons-digester-java-doc
+Description: Rule based XML Java object mapping tool
+ Commons-Digester converts XML to a Java object by a set of mapping
+ rules. A rich set of predefined rules is available for your use. You
+ can also create your own rules.
+
+Package: libcommons-digester-java-doc
+Section: doc
+Architecture: all
+Depends: ${misc:Depends}
+Description: Rule based XML Java object mapping tool (documentation)
+ Commons-Digester converts XML to a Java object by a set of mapping
+ rules. A rich set of predefined rules is available for your use. You
+ can also create your own rules.
+ .
+ This package contains the documentation.

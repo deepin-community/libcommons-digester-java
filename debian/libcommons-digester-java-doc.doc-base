@@ -1,0 +1,10 @@
+Document: libcommons-digester-java
+Title: Programmer API for libcommons-digester-java
+Author: Apache Digester Team
+Abstract: Javadocs programmer API of libcommons-digester-java, 
+ a rule based XML Java object mapping tool.
+Section: Programming
+
+Format: HTML
+Index: /usr/share/doc/libcommons-digester-java/api/index.html
+Files: /usr/share/doc/libcommons-digester-java/api/*.html

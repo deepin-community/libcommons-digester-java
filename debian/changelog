@@ -1,0 +1,218 @@
+libcommons-digester-java (1.8.1-5) unstable; urgency=medium
+
+  [ Kumar Appaiah ]
+  * debian/control:
+    + Remove Kumar Appaiah from uploaders
+
+  [ Emmanuel Bourg ]
+  * Install the javadoc under /usr/share/doc/libcommons-digester-java/api
+  * Build with the DH sequencer instead of CDBS
+  * Moved the package to Git
+  * Standards-Version updated to 4.1.3
+  * Switch to debhelper level 10
+  * Use a secure URL in debian/watch
+
+ -- Emmanuel Bourg <ebourg@apache.org>  Mon, 15 Jan 2018 14:26:16 +0100
+
+libcommons-digester-java (1.8.1-4) unstable; urgency=low
+
+  * debian/control:
+    - Use canonical URLs for the Vcs-* fields
+    - Removed Michael Koch from the uploaders (Closes: #654052)
+    - Updated Standards-Version to 3.9.4 (no changes)
+  * debian/rules:
+    - Install the upstream changelog
+    - Improved the clean target
+  * debian/watch: Updated to check archive.apache.org
+
+ -- Emmanuel Bourg <ebourg@apache.org>  Mon, 05 Aug 2013 23:39:11 +0200
+
+libcommons-digester-java (1.8.1-3) unstable; urgency=low
+
+  * Team upload.
+  * Remove Java runtime Depends.
+  * Switch to source format 3.0.
+
+ -- Torsten Werner <twerner@debian.org>  Sun, 07 Aug 2011 02:05:23 +0200
+
+libcommons-digester-java (1.8.1-2) unstable; urgency=low
+
+  * Upload to unstable.
+
+ -- Torsten Werner <twerner@debian.org>  Sun, 09 Aug 2009 12:02:15 +0200
+
+libcommons-digester-java (1.8.1-1) experimental; urgency=low
+
+  [ Ludovic Claude ]
+  * New upstream release, add myself to Uploaders
+  * Fix debian/watch to restrict watch on 1.x releases, as 2.0 is 
+    breaking backwards compatibility
+  * Add the Maven POM to the package,
+  * Add a Build-Depends-Indep dependency on maven-repo-helper, ant-optional,
+    junit
+  * Use mh_installpom and mh_installjar to install the POM and the jar to the
+    Maven repository
+
+  [ Emmanuel Bourg ]
+  * Update of the URLs
+  * Rename Jakarta Commons to Apache Commons
+
+  [ Torsten Werner ]
+  * Convert debian/copyright to UTF-8.
+  * Upload to experimental.
+
+ -- Torsten Werner <twerner@debian.org>  Sun, 12 Jul 2009 23:09:28 +0200
+
+libcommons-digester-java (1.8-3) unstable; urgency=low
+
+  * Convert to default-jre/jdk, thanks to Chris Cheney for the patch
+    (Closes: #508973)
+  * Change section to java
+
+ -- Varun Hiremath <varun@debian.org>  Thu, 07 May 2009 20:02:54 -0400
+
+libcommons-digester-java (1.8-2) unstable; urgency=low
+
+  [ Kumar Appaiah ]
+  * debian/control:
+    + Update maintainer's e-mail addresses.
+    + Standards version updated (no changes needed).
+    + Use Vcs-Browser and Vcs-Svn and update locations.
+
+  [ Varun Hiremath ]
+  * Split out api docs into a separate -doc package (Closes: #506356)
+  * Remove full text of Apache-2 license from debian/copyright
+
+ -- Varun Hiremath <varun@debian.org>  Sat, 06 Dec 2008 20:59:40 -0500
+
+libcommons-digester-java (1.8-1) unstable; urgency=low
+
+  [ Kumar Appaiah ]
+  * debian/control:
+    + Add XS-Vcs-{Svn,Browser}.
+    + Add Homepage field.
+  * Add watch file.
+
+  [ Varun Hiremath ]
+  * New upstream release
+  * debian/control:
+    + Add myself and Kumar Appaiah to Uploaders.
+    + move cdbs and debhelper to Build-Depends.
+    + modify Description.
+  * debian/compat: switch to 5
+  * remove links file from debian/
+  * debian/rules:
+    + Use DEB_UPSTREAM_VERSION to install jar
+    + Create a versioned symbolic link to the jar.
+    + implement get-orig-source
+  * Add debian/orig-tar.sh to remove CRLF line terminators from upstream files.
+  * Update debian/watch to call debian/orig-tar.sh
+
+ -- Varun Hiremath <varunhiremath@gmail.com>  Thu, 20 Sep 2007 22:02:53 +0530
+
+libcommons-digester-java (1.7-3) unstable; urgency=low
+
+  * Use java-gcj-compat instead of kaffe
+  * Moved Build-Depends-Indep to Build-Depends
+  * Removed Wolfgang from Uploaders
+  * Updated Standards-Version
+
+ -- Michael Koch <konqueror@gmx.de>  Sun, 17 Jun 2007 14:29:25 -0100
+
+libcommons-digester-java (1.7-2) unstable; urgency=low
+
+  * Kaffe compiler transition
+  * Remove Takashi from uploaders to reflect current maintainership
+
+ -- Wolfgang Baer <WBaer@gmx.de>  Sun, 15 Jan 2006 16:51:19 +0100
+
+libcommons-digester-java (1.7-1) unstable; urgency=low
+
+  * New upstream version
+    + Updated copyright to Apache 2.0 License
+  * libant1.6-java to ant transition
+  * Upgraded libcommons-beanutils-java dependency to >= 1.7
+  * Added java1-runtime as alternative to kaffe
+  * Generated and included the javadoc - register with doc-base
+  * Added myself to Uploaders
+  * Updated Standards-Version to 3.6.2 (no changes)
+
+ -- Wolfgang Baer <WBaer@gmx.de>  Sat, 01 Oct 2005 20:03:28 +0200
+
+libcommons-digester-java (1.5.0.1-4) unstable; urgency=low
+
+  * Made it a non-native package
+  * Fixed Depends on kaffe (Closes: #302012)
+  * Added myself to Uploaders
+  * Updated Standards-Version to 3.6.1
+
+ -- Michael Koch <konqueror@gmx.de>  Tue, 12 Apr 2005 07:56:33 +0000
+
+libcommons-digester-java (1.5.0.1-3) unstable; urgency=low
+
+  * rebuild with J2SDK1.3 comparible mode.(closes: #265253)
+
+ -- Takashi Okamoto <tora@debian.org>  Fri, 13 Aug 2004 01:59:24 +0900
+
+libcommons-digester-java (1.5.0.1-2) unstable; urgency=low
+
+  * fixed FTBFS.  (closes: #251432).
+
+ -- Takashi Okamoto <tora@debian.org>  Sat, 31 Jul 2004 12:19:52 +0900
+
+libcommons-digester-java (1.5.0.1-1) unstable; urgency=low
+
+  * fixed original source can't find debian repository.(closes:#251432)
+    This release is same as commons-digester 1.5.
+  * change source name commons-digester to libcommons-digester-java.
+
+ -- Takashi Okamoto <tora@debian.org>  Tue, 27 Jul 2004 01:20:06 +0900
+
+libcommons-digester-java (1.5-3) unstable; urgency=low
+
+  * Move to main.
+  * use cdbs to build package.
+  * remove javadoc to avoid lack of main javadoc tool.
+
+ -- Takashi Okamoto <tora@debian.org>  Sat,  1 May 2004 21:22:22 +0900
+
+libcommons-digester-java (1.5-2) unstable; urgency=low
+
+  * fixed extra blank in control file.(closes: #217921)
+  * summary and description are corrected.
+
+ -- Takashi Okamoto <tora@debian.org>  Mon, 29 Dec 2003 00:15:58 +0900
+
+libcommons-digester-java (1.5-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Takashi Okamoto <tora@debian.org>  Sun, 31 Aug 2003 20:26:57 +0900
+
+libcommons-digester-java (1.4-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Takashi Okamoto <tora@debian.org>  Sat,  8 Feb 2003 10:26:42 +0900
+
+libcommons-digester-java (1.3-2) unstable; urgency=low
+
+  * fixed FTBFS and minor bugs.(closes: #166054)
+
+ -- Takashi Okamoto <tora@debian.org>  Sat, 26 Oct 2002 20:10:06 +0900
+
+libcommons-digester-java (1.3-1) unstable; urgency=low
+
+  * New upstream.
+
+ -- Takashi Okamoto <tora@debian.org>  Mon, 14 Oct 2002 21:39:02 +0900
+
+libcommons-digester-java (1.1.1-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Takashi Okamoto <tora@debian.org>  Mon, 14 Oct 2002 21:38:55 +0900
+
+Local variables:
+mode: debian-changelog
+End:
